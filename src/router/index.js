@@ -15,14 +15,29 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
       },
       {
-        path: '/Ventana1',
+        path: '/información',
         name: 'Ventana1',
         component: () => import(/* webpackChunkName: "home" */ '@/views/Ventana1.vue'),
       },
       {
-        path: '/Ventana2',
+        path: '/alertas',
         name: 'Ventana2',
         component: () => import(/* webpackChunkName: "home" */ '@/views/Ventana2.vue'),
+      },
+      {
+        path: '/Test-Evaluación',
+        name: 'Ventana3',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Ventana3.vue'),
+      },
+      {
+        path: '/Guías_acción',
+        name: 'Ventana4',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Ventana4.vue'),
+      },
+      {
+        path: '/Ventana5',
+        name: 'Ventana5',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Ventana5.vue'),
       },
     ],
   },

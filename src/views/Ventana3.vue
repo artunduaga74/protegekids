@@ -1,8 +1,7 @@
 <template>
   <v-container>
     <v-card class="pa-4" elevation="8">
-      <v-card-title class="text-h5 font-weight-bold">Test para Identificar Señales de Riesgo en el Comportamiento de un
-        Adulto hacia Menores</v-card-title>
+      <v-card-title class="text-h5 font-weight-bold">Test de Evaluación</v-card-title>
       <v-divider class="my-4"></v-divider>
 
       <v-card-subtitle class="text-h6 font-weight-bold">Interpretación de los resultados</v-card-subtitle>
@@ -38,10 +37,10 @@
       </v-list>
       <v-row class="text-center no-gutters">
         <v-col cols="6" sm="4">
-          <v-btn color="primary" class="mt-4" @click="calculateScore">Respuesta</v-btn>
+          <v-btn color="accion" class="mt-2" @click="calculateScore">Respuesta</v-btn>
         </v-col>
         <v-col cols="6" sm="4">
-          <v-btn color="secondary" class="mt-4 ml-2" @click="resetTest">Repetir</v-btn>
+          <v-btn color="secondary" class="mt-2 ml-2" @click="resetTest">Repetir</v-btn>
         </v-col>
       </v-row>
       <v-card class="mt-4 pa-3" v-if="resultMessage">
@@ -50,10 +49,11 @@
       </v-card>
     </v-card>
     <v-row no-gutters class="text-center">
-      <v-col>
-        <v-btn rounded="0" variant="flat" color="info" class="mt-4" to="/">Regresar a la Página Principal</v-btn>
+      <v-col><v-btn rounded="0" variant="flat" color="info" class="mt-4" to="/">Regresar a la Página
+          Principal</v-btn>
       </v-col>
     </v-row>
+
   </v-container>
 </template>
 
@@ -65,10 +65,7 @@ export default {
         { text: "¿Este adulto parece preferir la compañía de niños más que la de otros adultos?", answer: null },
         { text: "¿Busca regularmente excusas para estar a solas con niños, fuera de la vista de otros adultos?", answer: null },
         { text: "¿Se involucra en actividades con niños que parecen estar fuera de lo común o no apropiadas para su rol?", answer: null },
-        { text: "¿Con frecuencia ofrece regalos, favores o atenciones excesivas a un niño en particular?", answer: null },
-        { text: "¿Toca, abraza o se acerca físicamente a los niños de una manera que parece inapropiada o excesiva?", answer: null },
-        { text: "¿Hace comentarios sobre la apariencia física de los niños que resultan incómodos o fuera de lugar?", answer: null },
-        { text: "¿Se molesta o insiste cuando los niños o los padres ponen límites a su comportamiento?", answer: null }
+        { text: "¿Con frecuencia ofrece regalos, favores o atenciones excesivas a un niño en particular?", answer: null }
       ],
       resultMessage: ""
     };
@@ -86,23 +83,23 @@ export default {
       } else {
         this.resultMessage = "Busca asesoramiento profesional o contacta con las autoridades si es necesario.";
       }
-      localStorage.setItem("testResult", this.resultMessage);
+      localStorage.setItem("testResult1", this.resultMessage);
     },
     resetTest() {
       this.questions.forEach(q => q.answer = null);
       this.resultMessage = "";
-      localStorage.removeItem("testProgress");
-      localStorage.removeItem("testResult");
+      localStorage.removeItem("testProgress1");
+      localStorage.removeItem("testResult1");
     },
     saveProgress() {
-      localStorage.setItem("testProgress", JSON.stringify(this.questions));
+      localStorage.setItem("testProgress1", JSON.stringify(this.questions));
     },
     loadProgress() {
-      const savedProgress = localStorage.getItem("testProgress");
+      const savedProgress = localStorage.getItem("testProgress1");
       if (savedProgress) {
         this.questions = JSON.parse(savedProgress);
       }
-      this.resultMessage = localStorage.getItem("testResult") || "";
+      this.resultMessage = localStorage.getItem("testResult1") || "";
     }
   }
 };

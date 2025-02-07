@@ -50,12 +50,12 @@ import { ref } from 'vue';
 
 // Lista de contactos de emergencia
 const items = [
-  { title: 'Policía Nacional', telefono: '+50762254433' },
-  { title: 'Policía Niñez y Adolescencia', telefono: '+50762254433' },
+  { title: 'Policía Nacional', telefono: '+507104' },
+  { title: 'Policía Niñez y Adolescencia', telefono: '+5075119540 ' },
   { title: 'Sistema de Emergencias', telefono: '+507911' },
-  { title: 'Senniaf (Niñez y Familia)', telefono: '+50762254433' },
-  { title: 'Medicina Legal', telefono: '+50762254433' },
-  { title: 'MIDES', telefono: '+50762254433' },
+  { title: 'Senniaf (Niñez y Familia)', telefono: '+507147' },
+  { title: 'Medicina Legal', telefono: '+507182' },
+  { title: 'MIDES', telefono: '+507311' },
 ];
 
 const drawer = ref(false);
@@ -69,16 +69,4 @@ const llamar = (numero) => {
 
 
 <!----Estilos de esta ventana-->
-<style type="text/css">
-.row1 {
-  border: 2px solid red;
-}
-
-.col1 {
-  border: 2px solid rgb(9, 197, 81);
-}
-
-borde {
-  border: 2px solid blue
-}
-</style>
+<style type="text/css"></style>
